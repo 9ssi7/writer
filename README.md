@@ -159,16 +159,21 @@ import {ListWriter} from "@ssibrahimbas/writer"
 const listWriter = new ListWriter();
 
 const SearchBar = () => {
-  const list = ["Macbook Pro", "Tea", "Cookie", "Cool Lime", "White Chocolate Mocha", "Ice Latte"];
   const [placeholder, setPlaceholder] = useState("");
 
   useEffect(() => {
+    const list = [
+      "Macbook Pro",
+      "Tea",
+      "Cookie",
+      "Cool Lime",
+      "White Chocolate Mocha",
+      "Ice Latte",
+    ];
     listWriter.writeList(setPlaceholder, list);
-  })
+  }, []);
 
-  return (
-    <input placeholder={placeholder}>
-  )
+  return <input placeholder={placeholder} />;
 }
 ```
 
