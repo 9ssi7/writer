@@ -1,0 +1,37 @@
+{
+  "name": "@ssibrahimbas/writer",
+  "version": "0.0.1",
+  "description": "Print function that works anywhere running JavaScript or TypeScript",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [
+    "writer",
+    "remover",
+    "timeout-writer",
+    "timeout-remover",
+    "list-writer",
+    "typescript",
+    "javascript"
+  ],
+  "homepage": "https://github.com/ssibrahimbas/writer/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/ssibrahimbas/writer/issues",
+    "email": "info@ssibrahimbas.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssibrahimbas/writer.git"
+  },
+  "scripts": {
+    "clear": "del-cli ./build/*",
+    "build": "npm run clear && tsc"
+  },
+  "author": "Sami Salih İBRAHİMBAŞ",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
