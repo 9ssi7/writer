@@ -306,6 +306,43 @@ const wordWriter = new WordWriter();
 wordWriter.writeAndRemoveWord(console.log, "Tea or Cookie", {removeSpeed: 300, writerSpeed: 200, waitProcessTime: 1000, waitProcessEndTime: 500})
 ```
 
+### stop
+
+Stops writing for the `writeAndRemoveWord` function.
+Cancels at the start of the next word.
+
+Example:
+```typescript
+import {WordWriter} from "@ssibrahimbas/writer"
+
+const wordWriter = new WordWriter();
+
+wordWriter.writeAndRemoveWord(console.log, "Tea or Cookie", {removeSpeed: 300, writerSpeed: 200, waitProcessTime: 1000, waitProcessEndTime: 500})
+setTimeout(() => {
+  wordWriter.stop();
+}, 500)
+```
+
+### start
+
+Start writing for the `writeAndRemoveWord` function.
+
+Example:
+```typescript
+import {WordWriter} from "@ssibrahimbas/writer"
+
+const wordWriter = new WordWriter();
+
+wordWriter.writeAndRemoveWord(console.log, "Tea or Cookie", {removeSpeed: 300, writerSpeed: 200, waitProcessTime: 1000, waitProcessEndTime: 500})
+setTimeout(() => {
+  wordWriter.stop();
+  setTimeout(() => {
+    wordWriter.start();
+    wordWriter.writeAndRemoveWord(console.log, "Tea or Cookie", {removeSpeed: 300, writerSpeed: 200, waitProcessTime: 1000, waitProcessEndTime: 500})
+  }, 1600)
+}, 500)
+```
+
 ### ListWriter
 
 With ListWriter, you can use your lists with printing and deletion animations.
@@ -347,6 +384,43 @@ import {ListWriter} from "@ssibrahimbas/writer"
 const listWriter = new ListWriter();
 
 listWriter.writeList(console.log, ["Tea or Cookie", "Coffee?", "Yes Sure"], {removeSpeed: 300, writerSpeed: 200, waitProcessTime: 1000, waitWordTime: 1000,  waitProcessEndTime: 500})
+```
+
+### stop
+
+Stops writing for the `writeList` function.
+Cancels at the start of the next word.
+
+Example:
+```typescript
+import {ListWriter} from "@ssibrahimbas/writer"
+
+const listWriter = new ListWriter();
+
+listWriter.writeList(console.log, ["Tea or Cookie", "Coffee?", "Yes Sure"])
+setTimeout(() => {
+  listWriter.stop();
+}, 500)
+```
+
+### start
+
+Start writing for the `writeList` function.
+
+Example:
+```typescript
+import {ListWriter} from "@ssibrahimbas/writer"
+
+const listWriter = new ListWriter();
+
+listWriter.writeList(console.log, ["Tea or Cookie", "Coffee?", "Yes Sure"])
+setTimeout(() => {
+  listWriter.stop();
+  setTimeout(() => {
+    listWriter.start();
+    listWriter.writeList(console.log, ["Tea or Cookie", "Coffee?", "Yes Sure"])
+  }, 1600)
+}, 500)
 ```
 
 ## Types

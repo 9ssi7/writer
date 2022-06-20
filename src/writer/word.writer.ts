@@ -8,6 +8,7 @@ import type {
 } from "../types/options.type";
 
 export class WordWriter extends BaseWriter {
+  private process: boolean = true;
   writeWord = async (
     render: Render,
     word: string,
@@ -33,6 +34,7 @@ export class WordWriter extends BaseWriter {
     word: string,
     options?: WriteAndRemoveWordOptions
   ): Promise<void> => {
+    if (!this.process) return;
     await this.writeWord(render, word, options);
     if (options && options.waitProcessTime) {
       await Util.sleep(options?.waitProcessTime);
@@ -41,5 +43,13 @@ export class WordWriter extends BaseWriter {
     if (options && options.waitProcessEndTime) {
       await Util.sleep(options?.waitProcessEndTime);
     }
+  };
+
+  stop = (): void => {
+    this.process = false;
+  };
+
+  start = (): void => {
+    this.process = true;
   };
 }
