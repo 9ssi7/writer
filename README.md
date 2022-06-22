@@ -205,7 +205,7 @@ Type WriteWordOptions:
 
 ```typescript
 {
-  writerSpeed?: number; // default 250
+  writerSpeed?: number; // default 60
 }
 ```
 
@@ -243,7 +243,7 @@ Type RemoveWordOptions:
 
 ```typescript
 {
-  removeSpeed?: number; // default 250
+  removeSpeed?: number; // default 30
 }
 ```
 
@@ -282,9 +282,9 @@ Type WriteAndRemoveWordOptions:
 
   // all fields are in milliseconds
 
-  writerSpeed?: number; // default 250
-  removeSpeed?: number; // default 250
-  waitProcessTime?: number; // how long to wait between remove or write, default 0
+  writerSpeed?: number; // default 60
+  removeSpeed?: number; // default 60
+  waitProcessTime?: number; // how long to wait between remove or write, default 500
   waitProcessEndTime?: number; // the amount of time to wait after the erase operation is finished and possibly before the write operation begins, default 0
   infinite?: boolean; // use infinite list writer, default null
 }
@@ -365,11 +365,11 @@ type WriteAndRemoveListOptions:
 
   // all fields are in milliseconds
   
-  writerSpeed?: number; // default 250
-  removeSpeed?: number; // default 250
+  writerSpeed?: number; // default 60
+  removeSpeed?: number; // default 30
   waitProcessTime?: number; // how long to wait between remove or write, default 0
-  waitWordTime?: number; // how long to wait between list items, default 0
-  waitProcessEndTime?: number; // the amount of time to wait after the erase operation is finished and possibly before the write operation begins, default 0
+  waitWordTime?: number; // how long to wait between list items, default 300
+  waitProcessEndTime?: number; // the amount of time to wait after the erase operation is finished and possibly before the write operation begins, default 500
   infinite?: boolean; // use infinite list writer, default true
 ```
 
