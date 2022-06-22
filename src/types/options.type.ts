@@ -11,6 +11,7 @@ export interface WriteAndRemoveWordOptions
   extends RemoveWordOptions,
     WriteWordOptions {
   waitProcessTime?: number;
+  infinite?: boolean;
 }
 
 export interface WriteAndRemoveListOptions extends WriteAndRemoveWordOptions {

@@ -8,7 +8,7 @@
 
 ### Thanks
 
-Although I wrote the source code for the package, there is one person (with a site she made) and an article that inspires me.
+Although I wrote the source code for the package, there is one person (with a site he made) and an article that inspires me.
 
 Emin Yormaz - (ItemSatis Search Placeholder)
 
@@ -279,10 +279,14 @@ Type WriteAndRemoveWordOptions:
 
 ```typescript
 {
+
+  // all fields are in milliseconds
+
   writerSpeed?: number; // default 250
   removeSpeed?: number; // default 250
   waitProcessTime?: number; // how long to wait between remove or write, default 0
   waitProcessEndTime?: number; // the amount of time to wait after the erase operation is finished and possibly before the write operation begins, default 0
+  infinite?: boolean; // use infinite list writer, default null
 }
 ```
 
@@ -358,11 +362,15 @@ writeList(render: Render, list: string[], options?: WriteAndRemoveListOptions) :
 type WriteAndRemoveListOptions:
 
 ```typescript
+
+  // all fields are in milliseconds
+  
   writerSpeed?: number; // default 250
   removeSpeed?: number; // default 250
   waitProcessTime?: number; // how long to wait between remove or write, default 0
   waitWordTime?: number; // how long to wait between list items, default 0
   waitProcessEndTime?: number; // the amount of time to wait after the erase operation is finished and possibly before the write operation begins, default 0
+  infinite?: boolean; // use infinite list writer, default true
 ```
 
 
