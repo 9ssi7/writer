@@ -6,6 +6,10 @@
 
 <br>
 
+### Example
+
+![Example gif](./example.gif)
+
 ### Thanks
 
 Although I wrote the source code for the package, there is one person (with a site he made) and an article that inspires me.

@@ -1,6 +1,6 @@
 {
   "name": "@ssibrahimbas/writer",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Print function that works anywhere running JavaScript or TypeScript",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
