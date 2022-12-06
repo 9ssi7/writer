@@ -1,11 +1,12 @@
-import type { Render } from "../types/render.type";
-import { Util } from "../util/Util";
-import { BaseWriter } from "./base.writer";
 import type {
-  WriteWordOptions,
   RemoveWordOptions,
   WriteAndRemoveWordOptions,
+  WriteWordOptions,
 } from "../types/options.type";
+
+import { BaseWriter } from "./base.writer";
+import type { Render } from "../types/render.type";
+import { Util } from "../util/Util";
 
 export class WordWriter extends BaseWriter {
   protected isProduction: boolean;
@@ -14,7 +15,7 @@ export class WordWriter extends BaseWriter {
     this.isProduction = prod;
   }
 
-  private process: boolean = true;
+  protected process: boolean = true;
   private lastFunc?: Function;
 
   writeWord = async (
@@ -91,9 +92,7 @@ export class WordWriter extends BaseWriter {
     this.lastFunc = func;
     const loop = async () => {
       await func();
-      if (this.process) {
-        loop();
-      }
+      loop();
     };
     loop();
   };
